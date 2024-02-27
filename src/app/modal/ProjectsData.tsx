@@ -6,14 +6,18 @@ const products: ProductClass[] = [
     "images/wandering.jpeg",
     "WanderingElixirs.com",
     "This project is a custom-designed e-commerce platform tailored for a client in the herbal medicine and mushroom tincture niche. On the backend, the site leverages Strapi, offering the client an intuitive interface to seamlessly manage product inventory—enabling add, edit, and delete functionalities.\n\n The frontend employs ReactJS for a responsive user experience, with Redux overseeing the state management of the shopping cart. For payment processing, the platform integrates Stripe's secure checkout system. A specialized webhook is also incorporated to sync with the inventory management system, thereby eliminating the possibility of customers ordering out-of-stock items.\n\n In terms of aesthetics, the styling is executed through JavaScript using Material-UI (MUI) React components, negating the need for external stylesheets.",
-    10.99
+    10.99,
+    "https://wanderingelixirs.com",
+    "https://github.com/BaselessFabric/wandering-elixirs-frontend"
   ),
   new ProductClass(
     1,
     "images/reddit.jpeg",
     "Minimal Reddit",
     "This project is a streamlined Reddit client, designed to offer a simplified, yet effective, user experience. Built on a ReactJS frontend, the application employs the Redux Toolkit to handle the state management of the search functionality.\n\n Users can easily search for and view recent posts from any subreddit of their choice, all through a straightforward search bar interface. By utilizing asynchronous fetch requests in tandem with Redux, the client delivers a responsive and efficient single-page web application.",
-    15.99
+    15.99,
+    "https://baselessfabric.github.io/MinimalReddit/",
+    "https://github.com/BaselessFabric/MinimalReddit"
   ),
   // new ProductClass(
   //     1,

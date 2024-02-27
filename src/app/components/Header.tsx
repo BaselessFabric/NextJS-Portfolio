@@ -19,12 +19,13 @@ import Drawer from "@mui/material/Drawer";
 import ShoppingBasketItem from "./ShoppingBasketItem";
 import ShoppingBasket from "../modal/ShoppingBasketClass";
 import Badge from "@mui/material/Badge";
+import Product from "../modal/ProductClass";
 
 const pages = ["GitHub", "LinkedIn"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 export const basket = new ShoppingBasket();
 
-function ResponsiveAppBar(props) {
+function ResponsiveAppBar(props: any) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -60,7 +61,7 @@ function ResponsiveAppBar(props) {
   // when item is removed
   const [basketItems, setBasketItems] = React.useState(basket.getItems());
 
-  const handleRemoveFromBasket = (product) => {
+  const handleRemoveFromBasket = (product: Product) => {
     basket.removeProduct(product);
     setBasketItems([...basket.getItems()]);
   };

@@ -7,7 +7,13 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-type Props = {};
+type Props = {
+  image: string | undefined;
+  name: string | undefined;
+  desc: any;
+  site: string | undefined;
+  github: string | undefined;
+};
 
 const Product: React.FC<Props> = (props) => {
   const matches = useMediaQuery("(max-width:600px)");
@@ -54,38 +60,54 @@ const Product: React.FC<Props> = (props) => {
             {props.name}
           </Typography>
           <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{ marginBottom: "20px" }}
-          >
-            Price: {props.price}
-          </Typography>
-          <Typography
             variant="body1"
             color="text.secondary"
             sx={{ marginBottom: "20px" }}
           >
-            {props.desc.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                <br />
-              </span>
-            ))}
+            {props.desc
+              .split("\n")
+              .map(
+                (
+                  line:
+                    | string
+                    | number
+                    | boolean
+                    | React.ReactElement<
+                        any,
+                        string | React.JSXElementConstructor<any>
+                      >
+                    | Iterable<React.ReactNode>
+                    | React.ReactPortal
+                    | React.PromiseLikeOfReactNode
+                    | null
+                    | undefined,
+                  i: React.Key | null | undefined
+                ) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                )
+              )}
           </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ backgroundColor: "primary.light", margin: "5px" }}
-          >
-            Website
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ backgroundColor: "primary.light" }}
-          >
-            GitHub
-          </Button>
+          <a href={props.site} target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ backgroundColor: "primary.light", margin: "5px" }}
+            >
+              Website
+            </Button>
+          </a>
+          <a href={props.github} target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ backgroundColor: "primary.light" }}
+            >
+              GitHub
+            </Button>
+          </a>
         </CardContent>
       </Card>
     </Box>

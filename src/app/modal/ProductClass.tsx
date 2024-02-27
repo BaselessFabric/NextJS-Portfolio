@@ -1,55 +1,73 @@
 export default class Product {
-    private id: number;
-    private image: string;
-    private name: string;
-    private desc: string;
-    private price: number;
+  private id: number;
+  private image: string;
+  private name: string;
+  private desc: string;
+  private price: number;
+  private site: string;
+  github: string;
 
-    constructor(
-        id: number,
-        image: string,
-        name: string,
-        desc: string,
-        price: number
-    ) {
-        this.id = id;
-        this.image = image;
-        this.name = name;
-        this.desc = desc;
-        this.price = price;
-    }
+  constructor(
+    id: number,
+    image: string,
+    name: string,
+    desc: string,
+    price: number,
+    site: string,
+    github: string
+  ) {
+    this.id = id;
+    this.image = image;
+    this.name = name;
+    this.desc = desc;
+    this.price = price;
+    this.site = site;
+    this.github = github;
+  }
 
-    // Getters and setters
+  // Getters and setters
 
-    getId(): number {
-        return this.id;
-    }
+  getId(): number {
+    return this.id;
+  }
 
-    getName(): string {
-        return this.name;
-    }
+  getGithub(): string {
+    return this.github;
+  }
 
-    getDesc(): string {
-        return this.desc;
-    }
+  getImage(): string {
+    return this.image;
+  }
 
-    getPrice(): string {
-        return `£${this.price}`;
-    }
+  getSite(): string {
+    return this.site;
+  }
 
-    setId(id: number): void {
-        this.id = id;
-    }
+  getName(): string {
+    return this.name;
+  }
 
-    setName(name: string): void {
-        this.name = name;
-    }
+  getDesc(): string {
+    return this.desc;
+  }
 
-    setDesc(desc: string): void {
-        this.desc = desc;
-    }
+  getPrice(): string {
+    return `£${this.price}`;
+  }
 
-    setPrice(price: number): void {
-        this.price = price;
-    }
+  setId(id: number): void {
+    this.id = id;
+  }
+
+  setName(name: string): void {
+    this.name = name;
+  }
+
+  setDesc(desc: string): void {
+    this.desc = desc;
+  }
+
+  setPrice(price: number): void {
+    this.price = price;
+  }
 }

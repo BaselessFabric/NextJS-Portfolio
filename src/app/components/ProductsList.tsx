@@ -6,7 +6,7 @@ import { basket } from "./Header";
 interface Props {}
 
 const ProductsList: React.FC<Props> = (props) => {
-  const handleAddToBasket = (product) => {
+  const handleAddToBasket = (product: any) => {
     basket.addProduct(product);
   };
 
@@ -20,7 +20,7 @@ const ProductsList: React.FC<Props> = (props) => {
         margin: "50px auto",
       }}
     >
-      {/* <h1>Products</h1 */}
+      {/* <h1>Products</h1> */}
 
       {products.map((product, index) => (
         // <li key={index}>
@@ -30,10 +30,10 @@ const ProductsList: React.FC<Props> = (props) => {
           <Product
             key={index}
             name={product.getName()}
-            price={product.getPrice()}
-            image={product.image}
+            image={product.getImage()}
             desc={product.getDesc()}
-            onAddToBasket={() => handleAddToBasket(product)}
+            site={product.getSite()}
+            github={product.getGithub()}
           />
         </div>
       ))}
