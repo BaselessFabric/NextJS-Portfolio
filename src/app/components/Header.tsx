@@ -4,26 +4,15 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
-import Drawer from "@mui/material/Drawer";
-import ShoppingBasketItem from "./ShoppingBasketItem";
-import ShoppingBasket from "../modal/ShoppingBasketClass";
-import Badge from "@mui/material/Badge";
 import Product from "../modal/ProductClass";
 
 const pages = ["GitHub", "LinkedIn"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-export const basket = new ShoppingBasket();
 
 function ResponsiveAppBar(props: any) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -59,12 +48,6 @@ function ResponsiveAppBar(props: any) {
 
   // have to interact with a basket state, as opposed to the data in the basket object, or the basket wont be re-rendered
   // when item is removed
-  const [basketItems, setBasketItems] = React.useState(basket.getItems());
-
-  const handleRemoveFromBasket = (product: Product) => {
-    basket.removeProduct(product);
-    setBasketItems([...basket.getItems()]);
-  };
 
   const [totalItems, setTotalItems] = React.useState();
 

@@ -1,22 +1,17 @@
 import React from "react";
 import Product from "./Product";
 import products from "../modal/ProjectsData";
-import { basket } from "./Header";
 
 interface Props {}
 
 const ProductsList: React.FC<Props> = (props) => {
-  const handleAddToBasket = (product: any) => {
-    basket.addProduct(product);
-  };
-
   return (
     <div
       style={{
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
-        maxWidth: "90%",
+        maxWidth: "100%",
         margin: "50px auto",
       }}
     >
