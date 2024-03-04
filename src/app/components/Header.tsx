@@ -10,8 +10,12 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Product from "../modal/ProductClass";
+import Link from "next/link";
 
-const pages = ["GitHub", "LinkedIn"];
+const pages = [
+  { title: "GitHub", link: "https://linkedin.com" },
+  { title: "LinkedIn", link: "https://github.com" },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar(props: any) {
@@ -119,8 +123,8 @@ function ResponsiveAppBar(props: any) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -165,13 +169,20 @@ function ResponsiveAppBar(props: any) {
               }}
             >
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                <a
+                  href={page.link}
+                  key={page.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {page}
-                </Button>
+                  <Button
+                    key={page.title}
+                    // onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page.title}
+                  </Button>
+                </a>
               ))}
             </Box>
           </Box>
